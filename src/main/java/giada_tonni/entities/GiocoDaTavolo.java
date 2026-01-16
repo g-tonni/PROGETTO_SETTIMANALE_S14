@@ -5,9 +5,9 @@ import giada_tonni.exception.NumeroGiocatoriNonValidoException;
 
 public class GiocoDaTavolo extends Giochi{
     private int numGiocatori;
-    private double durataPartita;
+    private int durataPartita;
 
-    public GiocoDaTavolo (int id, String titolo, String annoPubblicazione, double prezzo, int numGiocatori, double durataPartita){
+    public GiocoDaTavolo (int id, String titolo, String annoPubblicazione, double prezzo, int numGiocatori, int durataPartita){
         super(id, titolo, annoPubblicazione, prezzo);
         try{
             if(numGiocatori < 2 || numGiocatori > 10) throw new NumeroGiocatoriNonValidoException();
@@ -35,7 +35,7 @@ public class GiocoDaTavolo extends Giochi{
         return durataPartita;
     }
 
-    public void setDurataPartita(double durataPartita) {
+    public void setDurataPartita(int durataPartita) {
         this.durataPartita = durataPartita;
     }
 
