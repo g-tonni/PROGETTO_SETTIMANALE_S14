@@ -3,6 +3,8 @@ package giada_tonni.entities;
 import giada_tonni.exception.IdNonValidoException;
 import giada_tonni.exception.PrezzoNonValidoException;
 
+import java.util.Objects;
+
 public abstract class Giochi {
     private int id;
     private String titolo;
@@ -67,4 +69,12 @@ public abstract class Giochi {
                 ", prezzo=" + prezzo +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Giochi giochi = (Giochi) o;
+        return id == giochi.id && Objects.equals(titolo, giochi.titolo) && Objects.equals(annoPubblicazione, giochi.annoPubblicazione);
+    }
+
 }
