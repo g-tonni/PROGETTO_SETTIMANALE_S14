@@ -41,20 +41,21 @@ public class Collezione {
         }
     }
 
-/*    public void aggiornaElemento (int id, String elementoModifica){
+    public void aggiornaElemento (int id, Giochi giocoNuovo){
         try{
             if(this.collezioneGiochi.stream().anyMatch(gioco -> gioco.getId() == id)){
-                Optional<Giochi> giocoId = this.collezioneGiochi.stream()
-                        .filter(gioco -> gioco.getId() == id)
-                        .findFirst();
-                Giochi giocoAgg = giocoId.get();
+                for (int i = 0; i < this.collezioneGiochi.size(); i++) {
+                    if (this.collezioneGiochi.get(i).getId() == id){
+                        this.collezioneGiochi.set(i, giocoNuovo);
+                    }
+                }
             } else {
                 throw new IdNonValidoException("ID non valido o inesistente");
             }
         } catch (IdNonValidoException ex) {
             System.out.println(ex.getMessage());
         }
-    }*/
+    }
 
     public void statistiche (){
         List<Giochi> giochiTavolo = this.collezioneGiochi.stream()
