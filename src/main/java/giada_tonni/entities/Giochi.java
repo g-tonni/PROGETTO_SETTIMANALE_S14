@@ -19,12 +19,52 @@ public abstract class Giochi {
         this.titolo = titolo;
         this.annoPubblicazione = annoPubblicazione;
         try {
-            if(prezzo <= 0.0) throw new PrezzoNonValidoException("Il prezzo deve essere superiore allo 0");
+            if(prezzo <= 0.0) throw new PrezzoNonValidoException();
             this.prezzo = prezzo;
         } catch (PrezzoNonValidoException ex) {
             System.out.println(ex.getMessage());
         }
-        this.ciao = 
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitolo() {
+        return titolo;
+    }
+
+    public void setTitolo(String titolo) {
+        this.titolo = titolo;
+    }
+
+    public String getAnnoPubblicazione() {
+        return annoPubblicazione;
+    }
+
+    public void setAnnoPubblicazione(String annoPubblicazione) {
+        this.annoPubblicazione = annoPubblicazione;
+    }
+
+    public double getPrezzo() {
+        return prezzo;
+    }
+
+    public void setPrezzo(double prezzo) {
+        this.prezzo = prezzo;
+    }
+
+    @Override
+    public String toString() {
+        return "Giochi{" +
+                "id=" + id +
+                ", titolo='" + titolo + '\'' +
+                ", annoPubblicazione='" + annoPubblicazione + '\'' +
+                ", prezzo=" + prezzo +
+                '}';
     }
 }
